@@ -1,0 +1,62 @@
+[mod]
+id = "mysticalagriculture"
+version = "1.21.1-8.0.29"
+priority = 100
+
+[compatibility]
+horizon_revision = "1d63e0a5a37a7a708eb0b32b49bf0dfeb28ed8a9"
+
+# The pure inferium rules (age/ripeness and the jar's drop formula), injected
+# as `crate::game::mysticalagriculture`.
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "mysticalagriculture"
+source = "runtime.rs"
+
+# Game-side glue: the block/level reads the drop formula needs and the
+# bone-meal answer.
+[[module]]
+id = "state"
+file = "crates/horizon-client/src/game.rs"
+name = "mysticalagriculture_state"
+source = "support.rs"
+
+# A broken crop drops the jar's essence and seeds (the farmland under it
+# decides the tier), not the rolled table's plain-farmland fallback.
+[[injection]]
+id = "loot-drops"
+hook = "loot_drops"
+hook_version = 1
+kind = "HEAD"
+helper = "loot_drops.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "context", ty = "&crate::game::native_hooks::NativeLootDrops<'_>", value = "context" },
+  { name = "drops", ty = "&mut Vec<horizon_client::items::ItemStack>", value = "drops" },
+]
+
+# Bone meal never grows a Mystical Agriculture crop.
+[[injection]]
+id = "bonemeal-target"
+hook = "is_valid_bonemeal_target"
+hook_version = 1
+kind = "HEAD"
+helper = "bonemeal_target.rs"
+bindings = [
+  { name = "level", ty = "&crate::game::GameLevel<'_>", value = "self" },
+  { name = "state", ty = "BlockStateId", value = "state" },
+  { name = "valid", ty = "&mut Option<bool>", value = "valid" },
+]
+
+[[injection]]
+id = "bonemeal-success"
+hook = "is_bonemeal_success"
+hook_version = 1
+kind = "HEAD"
+helper = "bonemeal_success.rs"
+bindings = [
+  { name = "level", ty = "&crate::game::GameLevel<'_>", value = "self" },
+  { name = "state", ty = "BlockStateId", value = "state" },
+  { name = "success", ty = "&mut bool", value = "success" },
+]
