@@ -1,0 +1,13 @@
+# Port-owned content mod for the Mystical Agriculture 1.21.1-8.0.29 slice:
+# the inferium crop, its seeds and essence, and the essence-to-ingot recipe.
+# Textures, models and blockstate are the upstream mod's own MIT assets, read
+# from the exact ATM10 jar (see ../SOURCE.md). Local-only until publishing is
+# approved (see ../LICENSE and ../notes.md).
+id = "mysticalagriculture"
+name = "Mystical Agriculture"
+version = "0.1.0"
+description = "Slice 1: the inferium crop, essence and ingot"
+authors = ["BlakeBr0"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]
