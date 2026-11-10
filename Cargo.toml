@@ -1,0 +1,19 @@
+[package]
+# Port of: Mystical Agriculture 1.21.1-8.0.29 (BlakeBr0/MysticalAgriculture,
+# MIT), Minecraft Java 1.21.1 NeoForge. Clean-room Rust rewrite; local-only
+# until publishing is approved (ARCHITECTURE.md §8).
+name = "horizon-mysticalagriculture"
+version = "1.21.1-8.0.29"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+description = "Mystical Agriculture for Horizon: the inferium crop/essence loop (slice 1)"
+publish = false
+
+[lib]
+# This exact source is also injected as a same-crate module by horizon-mixins.
+path = "mixins/mysticalagriculture/runtime.rs"
+
+[workspace]
+members = ["tools/audit"]
+resolver = "2"

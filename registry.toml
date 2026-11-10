@@ -1,0 +1,35 @@
+id = "mysticalagriculture"
+kind = "native-mod"
+name = "Mystical Agriculture"
+summary = "The inferium crop and essence loop: grow crops on farmland, harvest essence, craft seeds and ingots."
+description = """
+A port of [Mystical Agriculture](https://github.com/BlakeBr0/MysticalAgriculture)
+by BlakeBr0 for Horizon. This first slice is the inferium crop/essence loop:
+
+- Craft inferium seeds (8 essence plus 1 wheat seed) and plant them on farmland;
+  the crop grows through vanilla wheat's eight ages on random ticks and needs
+  light 9 to survive.
+- Harvest a mature crop for essence and seeds; the drop depends on whether the
+  farmland is still there, as upstream. Bone meal is refused.
+- Craft an inferium ingot from a prosperity ingot and 2 essence.
+
+The machines, the other crops, the armour and the essences above inferium are
+later slices. MIT — original copyright and licence notices are kept in the port
+repository; see LICENSE and LICENSE-NOTICE.md there.
+"""
+authors = ["BlakeBr0", "AdLf0208"]
+owners = ["AdLf0208"]
+owner_ids = [107615167]
+license = "MIT"
+source = "https://github.com/AdLf0208/mysticalagriculture"
+icon = "icons/mysticalagriculture.png"
+categories = ["game-mechanics", "food"]
+tags = ["port", "farming", "crops", "essence"]
+
+[[versions]]
+version = "1.21.1-8.0.29"
+published = "2026-11-09"
+game = "26.3"
+file = "mysticalagriculture.hnmod"
+sha256 = "da887f5084aa48dd80ee022abe9beb3c443c991fa03894446b0bb228011cf97f"
+changelog = "First release"

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "mysticalagriculture:prosperity_ingot",
+    "mysticalagriculture:inferium_essence",
+    "mysticalagriculture:inferium_essence"
+  ],
+  "result": {
+    "id": "mysticalagriculture:inferium_ingot",
+    "count": 1
+  }
+}

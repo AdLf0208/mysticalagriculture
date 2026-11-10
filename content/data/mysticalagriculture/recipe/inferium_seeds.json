@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEE",
+    "ESE",
+    "EEE"
+  ],
+  "key": {
+    "E": "mysticalagriculture:inferium_essence",
+    "S": "minecraft:wheat_seeds"
+  },
+  "result": {
+    "id": "mysticalagriculture:inferium_seeds",
+    "count": 1
+  }
+}
